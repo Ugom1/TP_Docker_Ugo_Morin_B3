@@ -1,0 +1,9 @@
+{
+    "name": "frontend-jokes",
+    "version": "1.0.0",
+    "description": "Interface pour les blagues",
+    "scripts": {
+      "dev": "npx serve src -p 8080",
+      "build": "mkdir -p dist && cp src/index.html dist/"
+    }
+  }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Générateur de Blagues</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main class="card">
+        <h1>Besoin d'une blague ?</h1>
+        <button id="jokeBtn">Afficher une blague</button>
+        <p id="displayJoke">Cliquez sur le bouton !</p>
+    </main>
+
+    <script>
+        document.getElementById('jokeBtn').addEventListener('click', async () => {
+            try {
+                const response = await fetch('http://localhost:3000/joke');
+                const data = await response.json();
+                document.getElementById('displayJoke').innerText = data.text;
+            } catch (err) {
+                document.getElementById('displayJoke').innerText = "Erreur de connexion au backend";
+            }
+        });
+    </script>
+</body>
+
+</html>
